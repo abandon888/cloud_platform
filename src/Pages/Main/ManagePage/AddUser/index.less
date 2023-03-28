@@ -1,0 +1,86 @@
+@side-text-size:1.2rem!important;
+@side-font-size:1.3rem!important;
+
+ 
+#add-div{ 
+    width: 100%;
+    max-width: 1200px;
+    padding-top:50px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    svg{
+        font-size: 16px!important;
+    }
+    h1{ 
+        /*padding-bottom:5vh;*/
+    } 
+    .ant-row.ant-form-item{
+        width: 80%;
+        max-width: 1200px;
+    }
+    .ant-form-item-explain-success{ 
+        color: white!important;
+        margin-bottom: 10px;
+    }
+    .submitBtn{
+        display: flex;
+        justify-content: center;
+       /* padding-top:5vh;*/
+        .ant-col{
+            width: 100%!important;
+        } 
+        .ant-form-item-control-input{ 
+            position: relative;
+            left:calc(50% - 80px);
+            width: 160px;
+        }
+        .ant-btn{
+            height: 2.8rem;
+            width: 10rem!important;
+        }
+        >div{
+            width: 100%!important;
+            display: flex!important;
+            justify-content: center;
+            margin-left:0!important;
+            max-width: 100%!important;
+        }
+    }
+    .ant-form-item-label label,
+    .ant-form-item-control-input-content button[type^=submit] span{
+        font-size: @side-font-size;
+    }
+    .ant-form-item-label{
+        text-align: center!important;
+    }
+    .ant-form-item-control-input-content>input,
+    .ant-form-item-control-input,
+    .ant-input-affix-wrapper.ant-input-password{
+           /* width: 22rem!important;*/
+           width: 100%!important;
+    }
+    .ant-form-item-control-input-content>input,
+    .ant-input-affix-wrapper.ant-input-password,
+    .ant-select-selector{ 
+        padding: 10px 15px!important;  
+        font-size: 18px!important;
+        letter-spacing: 1px;
+    }
+    .ant-input-password input{  
+        font-size: 18px!important;
+        letter-spacing: 1px;
+    }
+    .ant-select-selector{
+        height: auto!important;
+    }
+  /*  .ant-form-item-control-input{
+        padding: 20px!important;
+        border:1px solid #d9d9d9;
+    }
+    .ant-select-selector{
+        border: none!important;
+    }*/
+}

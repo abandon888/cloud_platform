@@ -1,0 +1,93 @@
+{
+  "id": "3495809",
+  "name": "CloudSystem",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "17413015",
+      "name": "Weather Fog",
+      "font_class": "WeatherFog",
+      "unicode": "e71e",
+      "unicode_decimal": 59166
+    },
+    {
+      "icon_id": "4766511",
+      "name": "security scan",
+      "font_class": "securityscan",
+      "unicode": "e7c0",
+      "unicode_decimal": 59328
+    },
+    {
+      "icon_id": "22001894",
+      "name": "boat-outline",
+      "font_class": "boat-outline",
+      "unicode": "e980",
+      "unicode_decimal": 59776
+    },
+    {
+      "icon_id": "26942837",
+      "name": "rxa-water-filled",
+      "font_class": "rxa-water-filled",
+      "unicode": "e966",
+      "unicode_decimal": 59750
+    },
+    {
+      "icon_id": "1350618",
+      "name": "help",
+      "font_class": "help",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "27188584",
+      "name": "manage",
+      "font_class": "manage",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "15838485",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e674",
+      "unicode_decimal": 58996
+    },
+    {
+      "icon_id": "1089790",
+      "name": "rain",
+      "font_class": "xiayu",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "7009036",
+      "name": "video",
+      "font_class": "video",
+      "unicode": "e73b",
+      "unicode_decimal": 59195
+    },
+    {
+      "icon_id": "11755314",
+      "name": "quality-business",
+      "font_class": "quality-business",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "14629256",
+      "name": "secure-number",
+      "font_class": "secure-number",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "17397798",
+      "name": "machine",
+      "font_class": "machine",
+      "unicode": "e7b1",
+      "unicode_decimal": 59313
+    }
+  ]
+}

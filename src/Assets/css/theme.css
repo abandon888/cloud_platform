@@ -1,0 +1,104 @@
+
+
+/* 盒子内容 */
+#root .theme-box{
+    background-color: transparent!important;
+    border:2px solid rgb(250, 244, 244);
+    box-shadow: 0 3px 20px inset pink;
+    color: white !important; 
+}  
+#root .theme-box .theme-box-txt{
+    color: white !important; 
+}
+/* 云平台主页内容 */ 
+/* 右侧边栏 */
+#root  #briefindex-div #top-div a,
+#root  #briefindex-div #bottom-div a { 
+    font-size: 1.1rem!important;
+    color: white !important; 
+    text-shadow: 0px 2px 2px red;
+} 
+#root  #briefindex-div #top-div a:hover,
+#root  #briefindex-div #bottom-div a:hover{
+    color: #e2bfbf  !important; 
+}
+/* 顶部栏 */
+#root .header-div{
+    border-top:2px solid #ccc;
+}
+/* 侧边栏 */
+#root .left-div,
+#root .home-div .ant-menu.ant-menu-dark, .home-div .ant-menu-dark .ant-menu-sub, .home-div .ant-menu.ant-menu-dark .ant-menu-sub {
+    background: transparent!important;
+    color: white !important; 
+    /*text-shadow: 0px 2px 2px red;*/
+}
+#root .ant-menu-inline.ant-menu-root .ant-menu-item > .ant-menu-title-content, .ant-menu-inline.ant-menu-root .ant-menu-submenu-title > .ant-menu-title-content,
+#root .home-div .left-div .anticon svg{
+    color:white!important;
+}
+#root .logo-div {
+    height: 4rem!important;
+    background: white!important;
+    border-top:2px solid #ccc;
+}
+#root .ant-menu.ant-menu-root{
+    margin-top:30px!important;
+    min-height: 80vh;
+}
+#root .ant-menu-dark.ant-menu-inline .ant-menu-item{
+    margin:10px 0!important;
+    padding-left:35px!important;
+    background: url('../images/home/bg-li3.png');
+    background-size:contain ;
+    background-repeat: no-repeat ;
+}
+/* #root .ant-menu-dark.ant-menu-inline .ant-menu-item.ant-menu-item-selected{ 
+    box-shadow: 0px 3px 5px #dbbec3 !important;
+} */
+/*
+#root .ant-menu-dark.ant-menu-inline .ant-menu-item.ant-menu-item-selected  .ant-menu-title-content,
+#root .ant-menu-dark.ant-menu-inline .ant-menu-item:hover  .ant-menu-title-content{ 
+    box-shadow:0px 0px 15px inset #dbbec3 !important
+}
+*/
+#root .ant-menu-dark.ant-menu-inline .ant-menu-item.ant-menu-item-selected  ,
+#root .ant-menu-dark.ant-menu-inline .ant-menu-item:hover  { 
+    box-shadow:0px 0px 15px inset #dbbec3 !important;
+    border-radius: 50px 0;
+}
+
+#root .home-div .left-div .logo-div.hidden{
+    opacity: 1!important;
+    width: 100%!important;
+    visibility: visible!important;
+}
+/* 登录页 */
+#root .theme-txt{
+    color: #1890ff !important;;
+} 
+/* 用户详情页 */
+#root .ant-table.ant-table-bordered > .ant-table-container{
+    background: transparent!important;
+}
+#root #user-div .ant-table.ant-table-bordered,
+#root #user-div .ant-table tr td,
+#root #user-div .ant-table tr th{
+    background: transparent!important;
+    color: white !important;
+}
+/* 用户列表页 */
+#root #list-div .ant-table.ant-table-bordered,
+#root #list-div .ant-table,
+#root #list-div .ant-table tr td,
+#root #list-div .ant-table tr th{
+    background: transparent!important;
+    color: white !important;
+}
+/* 添加用户页 */
+#root .ant-form-item-label > label{
+    color: white !important;
+}
+#root .ant-form-item-label > label::before{
+    content:''!important;
+}

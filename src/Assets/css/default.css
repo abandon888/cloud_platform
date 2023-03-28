@@ -1,0 +1,149 @@
+/* 一、用于设置浏览器默认的css */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+  }
+  html{ 
+    background:url('../images/home/bg-body.png') !important;
+    background-size: cover; 
+  }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+  
+body,html,*{
+    padding:0;
+    margin:0;
+}
+img{
+  object-fit: cover;
+}
+ /* 将点击时，高亮颜色进行透明化处理。 */
+html,body,div,*{
+   -webkit-tap-highlight-color: rgba(0,0,0,0)!important;
+   -webkit-tap-highlight-color: transparent!important; 
+    /* For some Androids,个人感觉是低版本的安卓，4.0以下 */
+}
+/* 避免自动填充背景色 */
+input[type=text] {   
+  background: #fff; 
+  box-shadow: 0 0 0 1000px inset #fff; 
+}
+/* 数字类型的去除默认样式 */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} 
+
+
+
+
+
+/* 二、滚动条的样式*/
+/* 当前文件放置与文件内容没有较大关联的样式 */ 
+ /* 1.右侧表格栏滚动条颜色   */
+ .box-scroll,
+ .box-scroll-hidden{
+   overflow-y: auto!important;
+   overflow-x: hidden!important;
+ }
+ .box-scroll::-webkit-scrollbar ,
+ #list-div .ant-table-content::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 0.4rem !important;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 0.4rem !important;
+  border-radius: 5px !important; 
+  /*background:  #CCCCCE!important;*/
+  cursor: pointer;
+} 
+.box-scroll::-webkit-scrollbar-thumb  ,
+#list-div .ant-table-content::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 5px !important; 
+  background: #CCCCCE !important;
+  cursor: pointer !important;
+} 
+.box-scroll::-webkit-scrollbar-track ,
+#list-div .ant-table-content::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/ 
+  border-radius: 10px !important;
+  background: #ECECED !important;
+  cursor: pointer !important;
+} 
+
+
+/* 2.左侧边栏的滚动条颜色（无色、隐藏） */ 
+.header-div::-webkit-scrollbar,
+.box-scroll-hidden::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 0rem  ;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 0rem  ;
+  background: rgb(120, 120, 165) ;
+  cursor: pointer;
+}  
+.header-div::-webkit-scrollbar-thumb ,
+.box-scroll-hidden::-webkit-scrollbar-thumb ,
+*::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 5px !important;
+  box-shadow: inset 0 0 5px rgba(240, 240, 240, 0.5) !important;
+  background: linear-gradient(to right,#2F3B52,rgb(120, 120, 165)) !important;
+  cursor: pointer !important;
+}  
+.header-div::-webkit-scrollbar-track,
+.box-scroll-hidden::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(240, 240, 240, 0.5) !important;
+  border-radius: 0 !important;
+  background: rgba(240, 240, 240, 0.5) !important;
+  cursor: pointer !important;
+} 
+
+
+
+/* 三、全局样式表 */
+html,body,#app{
+  height:100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration:none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html,body{ 
+   /*min-height: 400px;
+  min-width: 1060px;
+  overflow: auto;
+  overflow: hidden; */
+}
+*{ 
+  cursor:pointer;
+  /* font:14px;
+  line-height: 24px; */
+  /* font-family:'楷体','宋体',Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif; */
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+input{
+  background: 0 0 0 inset #fff!important;
+}

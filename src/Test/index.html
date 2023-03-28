@@ -1,0 +1,40 @@
+<!--原生js版本的jsonp跨域实现-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>client1</title>
+</head>
+<body>
+<h1>我是client1</h1>
+<button id="myBtn">向酷*发起请求</button>
+
+<script>
+
+    // 设置回调函数, 这个回调函数要提前创建,不能在页面加载完毕后再创建。
+    // 回调参数名称与url中的参数一致, 这个回调函数名称只与当前页面有关，而后台是没有这个参数的。
+    function hello(json) {
+        console.log(json)
+    }
+    window.onload = function(){
+
+        // 监听事件
+        document.querySelector("#myBtn").onclick = function () {
+            // 酷*官网的获取json数据的请求头。
+            /*https://searchrecommend.kugou.com/get/complex?callback=jQuery112402531924339219609_1636893306420&word=love&_=1636893306422*/
+            // myScript("https://searchrecommend.kugou.com/get/complex?callback=hello&word=love&_=1636893306422");
+            myScript("http://sky.pingxiang.gov.cn/?callback=hello");
+        };
+
+
+        // 创建script标签
+        function myScript(src) {
+            let newNode = document.createElement("script");
+            newNode.src = src;
+            document.body.appendChild(newNode);
+        }
+    };
+</script>
+
+</body>
+</html>

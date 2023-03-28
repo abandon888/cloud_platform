@@ -1,0 +1,79 @@
+.body-div{
+    width: 100%!important;  
+} 
+#platform-body{
+    /*因theme.css风格关闭*/
+    /* color: #1f1f1f; */ 
+
+    background-color: transparent!important;
+    height: calc(100vh - 4rem);
+    /*width: calc(100vw - 18rem);*/
+    width: 100%;
+    padding:30px;
+    box-sizing: border-box;
+    transition: 0.5s width;
+    overflow: auto;
+ 
+}
+#platform-body .platform-inner-body{
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    /*因theme.css风格关闭*/
+    /* background-color: white ;  */
+    /* padding:40px; */
+    box-shadow: 2px 0 10px 0 rgba(210, 220, 230, 0.1);
+    font-size: 1.2rem!important;
+} 
+/* #iframe-body,#iframe-inner{
+    min-height: 720px!important;
+} */
+#root .content-div{ 
+    /* 如果是main.js引入的文件，则以原位置为准 */
+    background: url('../images/home/bg-body.png');
+    background-size:cover ;
+}
+#root .card-div{ 
+    padding-top: 10px !important;;
+    background: url('../images/home/bg-card.png');
+    background-size:cover ;
+    background-repeat: no-repeat;
+} 
+#root .home-div{ 
+    /* 如果是main.js引入的文件，则以原位置为准 */
+    background: url('../images/home/bg-body2.png');
+    background-size:cover ;
+}
+
+/* 加载旋转器 */
+#root .mask-spin{
+    width: 100vw;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#root .mask-spin span{
+    font-size: 2.5rem!important;
+}
+#root .mask-spin span i{
+    width: 15px!important;
+    height: 15px!important;
+}
+
+/* 下拉菜单 */
+.ant-dropdown-menu-item,
+.ant-dropdown-menu-submenu-title { 
+    letter-spacing: 1px!important;
+} 
+.ant-dropdown-menu-item:hover, 
+.ant-dropdown-menu-submenu-title:hover {
+    color:rgb(80, 12, 238);
+    background-color: rgba(12, 61, 194, 0.26)!important;
+    list-style: circle!important;
+} 
