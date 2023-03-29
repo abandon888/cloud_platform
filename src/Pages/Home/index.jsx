@@ -30,12 +30,12 @@ function Home(props) {
   let isLogin = true
 
   // 页面定时器
-  let TTimer = null
+  //let TTimer = null
   // 当前路由
   const location = useLocation()
   // 显示用户管理权限
   const [isHaveAuth, setIsHaveAuth] = useState(
-    localStorage.getItem('water_isHaveAuth') == 'true' ? true : false
+    localStorage.getItem('water_isHaveAuth') === 'true' ? true : false
   )
 
   // 检测访问权限
@@ -92,7 +92,7 @@ function Home(props) {
           sessionStorage.setItem('water_times', pre_number)
         }
         // 首次访问，退回访问，当前访问
-        if (pre_number == 2) {
+        if (pre_number === 2) {
           sessionStorage.removeItem('water_times')
           window.location.href = 'http://www.baidu.com'
         }
@@ -107,9 +107,9 @@ function Home(props) {
       }
     })
     // 轮训监听页面的登录权限,5秒判断一次
-    tTimer = setInterval(() => {
-      judgeLogin()
-    }, 5)
+    // tTimer = setInterval(() => {
+    //   judgeLogin()
+    // }, 5)
 
     return () => {
       window.removeEventListener('popstate', () => {})
@@ -117,7 +117,7 @@ function Home(props) {
       // 清除定时器
       if (tTimer) clearInterval(tTimer)
     }
-  }, [])
+  }, [isLogin, tTimer])
 
   // 监听侧边栏的折叠变化
   useEffect(() => {
@@ -146,6 +146,7 @@ function Home(props) {
   // 监听当前的路由变化(改变标题)
   useEffect(() => {
     let route = window.location.href
+    // eslint-disable-next-line array-callback-return
     subRouterMap.some((item, index) => {
       if (route.endsWith(item.path)) {
         setActiveTitle(item.title)
@@ -177,7 +178,7 @@ function Home(props) {
 
   // 3.用户管理
   const onHeaderClick1 = ({ key }) => {
-    if (key == 'userList') {
+    if (key === 'userList') {
       props.history.push('/home/manage/userlist')
     } else {
       props.history.push('/home/manage/adduser')
@@ -187,7 +188,7 @@ function Home(props) {
 
   // 4.个人详情
   const onHeaderClick2 = ({ key }) => {
-    if (key == 'userDetail') {
+    if (key === 'userDetail') {
       props.history.push('/home/person/userdetail')
     } else {
       // 如果记住密码，则不删除帐号部分
@@ -272,24 +273,77 @@ function Home(props) {
         </div>
         {/* 内容页面 */}
         <div className="content-div ">
-          <div className="header-div" style={{display: 'flex',}}>
-            <div className="header-left" style={{display: 'flex',}}>
-              <Button type="default" onClick={() => setCollapsed(!collapsed)}>
-                {React.createElement(
-                  collapsed ? MenuUnfoldOutlined : MenuFoldOutlined
-                )}
-              </Button>
+          <div
+            className="header-div"
+            style={{
+              display: 'flex',
+              height: '4rem',
+              width: '100%',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              fontSize: '@header-font-size',
+              padding: '0 0.6rem',
+              background: 'white',
+              boxShadow: '2px 0 20px 0 rgba(29,35,41,10%)',
+            }}>
+            <div
+              className="header-left"
+              style={{ display: 'flex', height: '100%' }}>
               <div
-                className={'useable-div ' + (activeIndex == 0 ? 'active' : '')}
-                onClick={handleIndex}>
-                <IconFont type="icon-home" />
-                <span>云平台</span>
+                style={{
+                  padding: '0 1.5vw',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '100%',
+                }}>
+                <Button type="default" onClick={() => setCollapsed(!collapsed)}>
+                  {React.createElement(
+                    collapsed ? MenuUnfoldOutlined : MenuFoldOutlined
+                  )}
+                </Button>
               </div>
               <div
-                className={'useable-div ' + (activeIndex == 1 ? 'active' : '')}
+                className={'useable-div ' + (activeIndex === 0 ? 'active' : '')}
+                onClick={handleIndex}
+                style={{
+                  padding: '0 1.5vw',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '100%',
+                }}>
+                <Button>
+                  <IconFont type="icon-home" />
+                  云平台
+                </Button>
+              </div>
+              <div
+                className={'useable-div ' + (activeIndex === 1 ? 'active' : '')}
+                style={{
+                  padding: '0 1.5vw',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '100%',
+                }}
                 onClick={handleHelp}>
-                <IconFont type="icon-help" />
-                <span>使用帮助</span>
+                <Button>
+                  <IconFont type="icon-help" />
+                  使用帮助
+                </Button>
               </div>
 
               {/* 管理员的功能 */}
@@ -315,7 +369,16 @@ function Home(props) {
                 ''
               )}
             </div>
-            <div className="header-right" style={{display: 'flex',justifyContent: 'flex-end',alignItems:'center',marginRight:'1rem',width:'280px',height:'100%'}}>';
+            <div
+              className="header-right"
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                marginRight: '1rem',
+                width: '280px',
+                height: '100%',
+              }}>
               <Dropdown
                 overlay={
                   <Menu onClick={onHeaderClick2}>
@@ -327,10 +390,34 @@ function Home(props) {
                   className={
                     'ant-dropdown-link ' + (activeIndex === 3 ? 'active' : '')
                   }
-                  style={{display: 'flex',alignItems:'center',justifyContent:'flex-end',width:'100%',height:'100%'}}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    // justifyContent: 'flex-end',
+                    width: '100%',
+                    height: '100%',
+                  }}
                   onClick={(e) => e.preventDefault()}>
-                  <div className="user-name">欢迎您，{username}</div>
-                  <Avatar src={userImg} alt="用户" className="user-img" style={{height:'30px'}} />
+                  <Button
+                    className="user-name"
+                    style={{
+                      // textAlign: 'right',
+                      width: 'auto',
+                      maxWidth: '180px',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      whiteSpace: 'nowrap',
+                      color: '@body-default-color !important',
+                      marginRight: '5vw',
+                    }}>
+                    用户，欢迎您
+                  </Button>
+                  <Avatar
+                    src={userImg}
+                    alt="用户"
+                    className="user-img"
+                    style={{ height: '30px' }}
+                  />
                 </a>
               </Dropdown>
             </div>
