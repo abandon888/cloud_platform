@@ -1,74 +1,77 @@
-.login-div{ 
-    box-sizing: border-box;
+.login-div {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  min-width: 400px;
+  background: url('../../Assets/images/home/bg-login2.png');
+  background-size: cover;
+  transition: 0.5s ease-in;
+
+  overflow: auto !important;
+
+  input {
+    font-size: 1.1rem !important;
+    letter-spacing: 0.5px;
+    text-indent: 5px;
+  }
+  input::placeholder {
+    font-size: 1rem !important;
+  }
+
+  .box-div {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center; 
-    width: 100vw;
-    height: 100vh; 
-    min-width: 400px; 
-    background:url('../../Assets/images/home/bg-login2.png');
-    background-size:cover; 
-    transition: 0.5s ease-in;
-    
-    overflow: auto!important;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    input{
-        font-size: 1.1rem!important;
-        letter-spacing: 0.5px;
-        text-indent: 5px;
-    }
-    input::placeholder{ 
-        font-size: 1rem!important;
-    }
+  .ant-form-item-label {
+    text-align: left !important;
+  }
 
-    .box-div{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+  button[type^='submit'] {
+    width: 100% !important;
+    height: 40px;
+  }
+  .ant-form-item-control-input-content {
+    display: flex;
+    justify-content: space-between;
+    .ant-input-affix-wrapper {
+      padding: 6.5px 11px;
+      font-size: 16px;
     }
-
-    .ant-form-item-label{
-        text-align: left!important;
+  }
+  #normal_login {
+    width: 328px;
+  }
+  .mylogo-div {
+    height: 200px;
+    width: 400px;
+    img {
+      height: 100%;
     }
-
-    button[type^=submit]{
-        width: 100%!important;
-        height: 40px;
-    }
-    .ant-form-item-control-input-content{
-        display: flex;
-        justify-content: space-between;
-        .ant-input-affix-wrapper{ 
-            padding: 6.5px 11px;
-            font-size: 16px;
-        }
-    }
-    #normal_login{
-        width: 328px;
-    }
-    .mylogo-div{
-        height: 200px;
-        width: 400px;
-        img{
-            height: 100%;
-        }
-    }
+  }
+  .anticon svg {
+    font-size: 1rem !important;
+  }
+  .submit-div {
     .anticon svg {
-        font-size: 1rem!important;
-    } 
-    .submit-div{
-        .anticon svg{
-            color: white !important; 
-        }
-        .ant-spin-spinning{
-            margin:-5px 0 0 5px;
-        }
-        .ant-btn[disabled], .ant-btn[disabled]:hover, .ant-btn[disabled]:focus, .ant-btn[disabled]:active{
-            color: #fff!important;
-            border-color: #40a9ff!important;
-            background: #40a9ff!important; 
-        }
+      color: white !important;
     }
+    .ant-spin-spinning {
+      margin: -5px 0 0 5px;
+    }
+    .ant-btn[disabled],
+    .ant-btn[disabled]:hover,
+    .ant-btn[disabled]:focus,
+    .ant-btn[disabled]:active {
+      color: #fff !important;
+      border-color: #40a9ff !important;
+      background: #40a9ff !important;
+    }
+  }
 }

@@ -7,7 +7,7 @@ import Captcha from 'react-captcha-code'
 import qs from 'querystring'
 import moment from 'moment'
 import fgLogo from '../../Assets/images/home/fg-logo2.png'
-import './index.less'
+import './index.css'
 
 function Login(props) {
   const remainTime = 5 // 下一次登录的信息
@@ -141,8 +141,8 @@ function Login(props) {
   const onFinish = (values) => {
     const { username, password, remember } = values
 
-  // Directly redirect to platformRouter route
-  window.location.href = platformRouter
+    // Directly redirect to platformRouter route
+    window.location.href = platformRouter
   }
 
   // 监听验证码

@@ -1,0 +1,111 @@
+#briefindex-div #main-body {
+  margin-bottom: 30px!important;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  /*  display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;*/
+}
+#briefindex-div #main-body .brief-div {
+  text-indent: 2em;
+  font-size: 1.2rem !important;
+  padding: 20px 20px 0 20px;
+  line-height: 2.1;
+  /* 最多8行 */
+  display: -webkit-box;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+}
+#briefindex-div #main-body .body-div {
+  /*margin-top:20px;*/
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  max-height: 500px;
+}
+#briefindex-div #main-body .body-div img {
+  border-radius: 30px;
+  position: relative;
+  max-height: 500px;
+  box-shadow: 0 0 10px 4px white!important;
+}
+#briefindex-div #main-body .body-div span {
+  z-index: 99;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  background-color: rgba(209, 180, 180, 0.5);
+  padding: 5px 10px;
+  box-shadow: 0 0 12px 5px #ccc !important;
+  letter-spacing: 1px;
+}
+#briefindex-div #main-body .body-div span:hover {
+  background-color: rgba(209, 180, 180, 0.7);
+}
+#briefindex-div #top-div,
+#briefindex-div #bottom-div {
+  padding: 5px;
+  height: auto;
+  box-sizing: border-box;
+  min-height: 365px!important;
+  background-color: white;
+  border-radius: 5px;
+  line-height: 2;
+}
+#briefindex-div #top-div .title,
+#briefindex-div #bottom-div .title {
+  text-align: center;
+  margin-bottom: 5px;
+}
+#briefindex-div #top-div .content,
+#briefindex-div #bottom-div .content {
+  height: 300px;
+}
+#briefindex-div #top-div a,
+#briefindex-div #bottom-div a {
+  text-indent: 8px;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  color: #494646 !important;
+  border-top: 1px solid #e4dcdc;
+}
+#briefindex-div #top-div a:hover,
+#briefindex-div #bottom-div a:hover {
+  color: #b83d3d !important;
+}
+#briefindex-div #top-div {
+  margin-bottom: 30px!important;
+}
+#fix-version {
+  position: absolute;
+  bottom: 10vh;
+  right: 40px;
+  background: rgba(176, 176, 201, 0.96);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#fix-version .anticon svg {
+  color: white !important;
+  font-size: 1.5rem !important;
+}
+#fix-version:hover {
+  background: rgba(142, 142, 179, 0.96);
+}

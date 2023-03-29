@@ -13,7 +13,7 @@ import { Row, Col } from 'antd'
 // 引入时间模块
 import moment from 'moment'
 
-import './index.less'
+import './index.css'
 import cloudBanner from 'Assets/images/banner/cloud-banner.jpg'
 
 function BriefIndex(props) {
