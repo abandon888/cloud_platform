@@ -6,7 +6,7 @@ import { Row, Col } from 'antd'
 // 引入时间模块
 import moment from 'moment'
 
-import './index.less'
+import './index.css'
 import waterRainAvatar from 'Assets/images/avatar/water-rain-avatar.jpg'
 import waterRainBanner from 'Assets/images/banner/water-rain-banner.jpg'
 

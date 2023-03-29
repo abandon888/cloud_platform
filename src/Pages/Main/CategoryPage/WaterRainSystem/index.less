@@ -1,137 +1,135 @@
-@body-hover-color:rgba(31, 33, 163, 0.96)!important;
-@body-default-color:#1f1f1f!important;
-@body-link-color:#494646!important;
-@body-active-color:rgb(184, 61, 61)!important;
-@body-font-size:1.2rem!important;
-@body-text-size:1.2rem!important;
+@body-hover-color:rgba (31, 33, 163, 0.96)!important;
+@body-default-color: #1f1f1f!important;
+@body-link-color: #494646!important;
+@body-active-color:rgb (184, 61, 61)!important;
+@body-font-size: 1.2rem!important;
+@body-text-size: 1.2rem!important;
 
+#waterRainSystem-div {
+  // 头部内容
+  .head-div {
+    height: 150px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
 
-#waterRainSystem-div{
-    // 头部内容
-    .head-div{
-        height: 150px;
-        margin-bottom: 20px;
-        background-color: white;
-        border-radius: 5px;
-        padding:10px;
-
-        .head-top{
-            padding-left:30px;
-            letter-spacing: 3px;
-            font-size: 1.4rem;
-        }
-        .head-bottom{
-            display: flex;
-            margin-top:10px;
-            .head-left{
-                width: 120px;
-                height: 120px;
-                margin-left:40px;
-                img{
-                    width: 80px;
-                    height: 80px;
-                    border-radius: 50%;
-                    box-shadow: 0 0 5px 2px #ccc;
-                }
-            }
-            .head-right{
-                .first{
-                    margin-bottom:5px;
-                    font-weight: 550;  
-                    letter-spacing: 2px;
-                    
-                } 
-                .second{
-                    color:rgb(92, 58, 58);
-                    font-size:1rem;
-                }
-            }
-        }
+    .head-top {
+      padding-left: 30px;
+      letter-spacing: 3px;
+      font-size: 1.4rem;
     }
-
-    // 主体内容
-    #main-body{ 
-        margin-bottom:30px!important; 
-        box-sizing: border-box;
-        background-color: white;
-        border-radius: 5px;
-        overflow: hidden;
-        height:500px;
-        padding:10px;
-        line-height: 2.2;
-        letter-spacing: 2px;
-        h1{
-            margin: 0!important;
+    .head-bottom {
+      display: flex;
+      margin-top: 10px;
+      .head-left {
+        width: 120px;
+        height: 120px;
+        margin-left: 40px;
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          box-shadow: 0 0 5px 2px #ccc;
         }
-      /*  display: flex;
+      }
+      .head-right {
+        .first {
+          margin-bottom: 5px;
+          font-weight: 550;
+          letter-spacing: 2px;
+        }
+        .second {
+          color: rgb(92, 58, 58);
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  // 主体内容
+  #main-body {
+    margin-bottom: 30px !important;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 500px;
+    padding: 10px;
+    line-height: 2.2;
+    letter-spacing: 2px;
+    h1 {
+      margin: 0 !important;
+    }
+    /*  display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;*/
-        .brief-div{
-            text-indent: 2em;
-            font-size: @body-text-size; 
-            padding: 20px 20px 0 20px;
-            /* 最多8行 */
-            display: -webkit-box;
-            white-space: normal;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 8;
-            -webkit-box-orient: vertical; 
-        }
-        .main-div{
-            margin-top:20px;
-            width: 100%;
-            box-sizing: border-box;
-            border-radius: 5px;
-            position: relative;
-            max-height: 500px;  
-        }
-    }  
+    .brief-div {
+      text-indent: 2em;
+      font-size: @body-text-size;
+      padding: 20px 20px 0 20px;
+      /* 最多8行 */
+      display: -webkit-box;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+    }
+    .main-div {
+      margin-top: 20px;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 5px;
+      position: relative;
+      max-height: 500px;
+    }
+  }
 
-    // 侧边栏内容
-    #top-div,
-    #bottom-div{
-        padding:5px;
-        box-sizing: border-box; 
-        background-color: white;
-        border-radius: 5px;
-        line-height: 2;
-        .title{
-            text-align: center;
-            border-bottom:1px solid rgb(228, 220, 220);
-            margin-bottom:5px;
-        } 
-        .content{ 
-            padding-top:10px;
-        }
+  // 侧边栏内容
+  #top-div,
+  #bottom-div {
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 5px;
+    line-height: 2;
+    .title {
+      text-align: center;
+      border-bottom: 1px solid rgb(228, 220, 220);
+      margin-bottom: 5px;
     }
-    #top-div{
-        height: 120px; 
-        .content-btn{   
-            background-color: #89b6f8;
-            
-            color:white;
-            text-align: center;
-            letter-spacing: 2px;
-            font-size: 1rem!important;
-            border-radius: 5px;
-            padding: 5px 0 !important;
-            margin-top:15px;
-        }
-        .content-btn:hover{ 
-            background-color: rgb(165, 154, 206);
-        } 
+    .content {
+      padding-top: 10px;
     }
-    #bottom-div{
-        height: 400px; 
-        img{
-            border-radius: 10px;
-            max-height: 320px; 
-        }
+  }
+  #top-div {
+    height: 120px;
+    .content-btn {
+      background-color: #89b6f8;
+
+      color: white;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 1rem !important;
+      border-radius: 5px;
+      padding: 5px 0 !important;
+      margin-top: 15px;
     }
- 
-    #top-div {
-        margin-bottom:30px!important;
+    .content-btn:hover {
+      background-color: rgb(165, 154, 206);
     }
+  }
+  #bottom-div {
+    height: 400px;
+    img {
+      border-radius: 10px;
+      max-height: 320px;
+    }
+  }
+
+  #top-div {
+    margin-bottom: 30px !important;
+  }
 }

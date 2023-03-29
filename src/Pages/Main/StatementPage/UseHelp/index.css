@@ -1,0 +1,8 @@
+#usehelp-div {
+  padding: 30px;
+  min-height: 500px;
+}
+#usehelp-div .mybody-div {
+  text-indent: 2rem;
+  line-height: 2;
+}

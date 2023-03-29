@@ -5,7 +5,7 @@ import { MessageTool } from 'Components/MessageTool';
 // 引入时间模块
 import moment from 'moment';
   
-import './index.less';
+import './index.css';
   
 
 function BriefIndex(){     

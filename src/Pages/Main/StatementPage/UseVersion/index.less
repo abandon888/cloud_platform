@@ -1,114 +1,115 @@
-#useversion-div{
-    padding:30px;
-    min-height: 500px;
-    width:100%;
+#useversion-div {
+  padding: 30px;
+  min-height: 500px;
+  width: 100%;
 
-    h1{
-        margin-top:20px;
-        background:url("~Assets/images/home/bg-header.png");
-        background-size:cover ;
-        height: 60px;
+  h1 {
+    margin-top: 20px;
+    background: url('~Assets/images/home/bg-header.png');
+    background-size: cover;
+    height: 60px;
 
-        span{
-            top:-15px;
+    span {
+      top: -15px;
+      position: relative;
+    }
+  }
+
+  .mybody-div {
+    text-indent: 2rem;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .ant-steps {
+      .ant-steps-item {
+        display: flex !important;
+        justify-content: center;
+        min-height: 150px;
+
+        .ant-steps-item-container {
+          display: flex !important;
+          justify-content: center;
+
+          .ant-steps-item-content {
+            position: absolute !important;
+            width: 40%;
+
+            border: 1px solid white;
+            background-color: transparent !important;
+            border: 2px solid rgb(250, 244, 244);
+            box-shadow: 0 3px 20px inset pink;
+            color: white !important;
+            padding-top: 10px;
+            .ant-steps-item-title {
+              font-size: 1.2rem !important;
+              margin-left: -30px;
+              color: white;
+              letter-spacing: 1px;
+              text-shadow: 0px 2px 2px red;
+            }
+            .ant-steps-item-description {
+              ul {
+                margin-top: 10px;
+              }
+              ul li {
+                color: white !important;
+                line-height: 1.6;
+
+                list-style: disc;
+              }
+            }
+          }
+          .ant-steps-item-tail {
+            left: 50%;
+            z-index: 1;
+            background-color: white !important;
+          }
+          .ant-steps-item-icon {
+            float: none !important;
+            margin: 0 !important;
+            display: flex;
+            justify-content: center;
             position: relative;
+
+            background-color: white !important;
+            z-index: 10;
+            .ant-steps-icon {
+              position: absolute !important;
+              width: 100% !important;
+              top: 0 !important;
+              line-height: 16px !important;
+              text-indent: -4px !important;
+
+              text-align: center;
+              display: grid;
+              justify-content: center;
+              align-items: center;
+              height: 100%;
+
+              color: blue;
+            }
+          }
         }
+      }
+      .ant-steps-item:nth-child(2n + 1) {
+        .ant-steps-item-content {
+          margin-right: 45%;
+        }
+      }
+      .ant-steps-item:nth-child(2n) {
+        .ant-steps-item-content {
+          margin-left: 45%;
+        }
+      }
     }
-
-    .mybody-div{ 
-        text-indent: 2rem;
-        line-height: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .ant-steps{
-
-            .ant-steps-item{
-                display: flex!important;
-                justify-content: center;
-                min-height: 150px;
-
-                .ant-steps-item-container{
-                    display: flex!important;
-                    justify-content: center;
-
-                    .ant-steps-item-content{
-                        position: absolute!important; 
-                        width: 40%;
-
-                        border:1px solid white;
-                        background-color: transparent!important;
-                        border:2px solid rgb(250, 244, 244);
-                        box-shadow: 0 3px 20px inset pink;
-                        color: white !important; 
-                        padding-top:10px;
-                        .ant-steps-item-title{
-                            font-size:1.2rem!important;
-                            margin-left: -30px;
-                            color:white;
-                            letter-spacing: 1px;
-                            text-shadow: 0px 2px 2px red;
-                        }
-                        .ant-steps-item-description{
-                            ul{
-                                margin-top:10px;
-                            }
-                            ul li{
-                                color: white !important;
-                                line-height: 1.6;
-
-                                list-style: disc;
-                            }
-                        }
-                    }
-                    .ant-steps-item-tail{
-                        left:50%;
-                        z-index: 1;
-                        background-color: white!important;
-                    }
-                    .ant-steps-item-icon{
-                        float: none !important;
-                        margin: 0 !important;
-                        display: flex;
-                        justify-content: center;
-                        position: relative;
-
-                        background-color: white!important;
-                        z-index: 10;
-                        .ant-steps-icon{
-                            position: absolute!important; 
-                            width: 100%!important;
-                            top: 0 !important;
-                            line-height: 16px!important;
-                            text-indent: -4px!important;  
-
-                            text-align: center;
-                            display: grid; 
-                            justify-content: center;
-                            align-items: center;
-                            height: 100%;
-
-                            color:blue;
-                        }
-                    }
-                }
-            }
-            .ant-steps-item:nth-child(2n+1){ 
-                .ant-steps-item-content{ 
-                    margin-right:45%;
-
-                }
-            }
-            .ant-steps-item:nth-child(2n){
-                .ant-steps-item-content{
-                    margin-left:45%;
-                }
-            }
-        }
-        .ant-steps-vertical > .ant-steps-item > .ant-steps-item-container > .ant-steps-item-tail::after {
-            width: 0px!important;
-            height: 100%;
-            display: none;
-        }
+    .ant-steps-vertical
+      > .ant-steps-item
+      > .ant-steps-item-container
+      > .ant-steps-item-tail::after {
+      width: 0px !important;
+      height: 100%;
+      display: none;
     }
+  }
 }
