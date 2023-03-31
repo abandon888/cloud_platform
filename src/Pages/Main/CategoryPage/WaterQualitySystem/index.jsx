@@ -11,7 +11,7 @@ import {
   message,
   Cascader,
   Table,
-  Divider
+  Divider,
 } from 'antd'
 //引入service中的axios模块
 import { getWaterQualityData } from '../../../../Services/waterQuality'
@@ -101,50 +101,33 @@ const columns = [
     dataIndex: 'water_temperature',
   },
 ]
-const data = [{
-  "algae_density": "*",
-            "ammonia_nitrogen": "0.265",
-            "basin": "长江流域",
-            "chlorophyll_alpha": "*",
-            "city": "吉安市",
-            "conductivity": "120.2",
-            "dissolved_oxygen": "8.62",
-            "pH": "6.36",
-            "permanganate_index": "2.75",
-            "province": "江西省",
-            "river": "遂川江",
-            "section": "遂川江江口",
-            "station_status": "正常",
-            "time": "03-30 08:00",
-            "total_nitrogen": "1.90",
-            "total_phosphorus": "0.097",
-            "turbidity": "35.7",
-            "water_quality": "Ⅱ",
-            "water_temperature": "14.8"
-}]
-function onChange(value) {
-  //console.log(Number(value[1]))
-  getWaterQualityData((Number(value[1]))).then((res) => {
-    console.log(res)
-  })
-}
-
-function onSearch(val) {
-  console.log('search:', val)
-}
 
 function BriefIndex() {
-  // 二、监听数据
-  // 初始化加载
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  function onChange(value) {
+    //console.log(Number(value[1]))
+    setLoading(true)
+    getWaterQualityData(Number(value[1])).then((res) => {
+      setData(res.tbody)
+      setLoading(false)
+    })
+  }
+
+  function onSearch(val) {
+    setLoading(true)
+    getWaterQualityData(val).then((res) => {
+      setData(res.tbody)
+      setLoading(false)
+    })
+  }
+
   useEffect(() => {
-    try {
-      // ....
-    } catch (err) {
-      console.log('出现异常', err)
-      MessageTool('系统出现异常！请刷新重试', 'error')
+    if (loading) {
+      MessageTool('加载中', 'loading')
     }
-    return () => {}
-  }, [])
+  }, [loading])
 
   return (
     <div id="platform-body">
@@ -198,19 +181,18 @@ function BriefIndex() {
             className="antdSearch"
           />
         </div>
-         <div>
+        <div>
+          <Divider />
 
-      <Divider />
-
-      <Table
-        columns={columns}
-        dataSource={data}
-        scroll={{
-          x: 900,
-          y: 600,
-        }}
-      />
-    </div>
+          <Table
+            columns={columns}
+            dataSource={data}
+            scroll={{
+              x: 900,
+              y: 600,
+            }}
+          />
+        </div>
       </div>
     </div>
   )
