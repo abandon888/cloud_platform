@@ -123,8 +123,8 @@ const data = [{
             "water_temperature": "14.8"
 }]
 function onChange(value) {
-  console.log(value[1])
-  getWaterQualityData(value[1]).then((res) => {
+  //console.log(Number(value[1]))
+  getWaterQualityData((Number(value[1]))).then((res) => {
     console.log(res)
   })
 }
