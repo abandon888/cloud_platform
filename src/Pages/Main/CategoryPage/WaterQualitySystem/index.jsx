@@ -205,6 +205,10 @@ function BriefIndex() {
       <Table
         columns={columns}
         dataSource={data}
+        scroll={{
+          x: 900,
+          y: 600,
+        }}
       />
     </div>
       </div>
