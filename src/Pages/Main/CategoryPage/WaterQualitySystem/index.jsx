@@ -15,6 +15,7 @@ import {
 } from 'antd'
 //引入service中的axios模块
 import { getWaterQualityData } from '../../../../Services/waterQuality'
+import RadarChart from './charts'
 
 // 引入时间模块
 import moment from 'moment'
@@ -135,7 +136,9 @@ function BriefIndex() {
               y: 400,
             }}
           />
+          {data.length > 1 ? <RadarChart data={[]}/> : <RadarChart data={data}/>}
         </div>
+        
       </div>
     </div>
   )
