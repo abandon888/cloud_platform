@@ -27,101 +27,139 @@ const columns = [
   {
     title: '省份',
     dataIndex: 'province',
+    width: 100,
+    fixed: 'left',
   },
   {
     title: '藻密度(cells/L)',
     dataIndex: 'algae_density',
+    width: 150,
   },
   {
     title: '氨氮(mg/L)',
     dataIndex: 'ammonia_nitrogen',
+    width: 150,
   },
   {
     title: '流域',
     dataIndex: 'basin',
+    width: 150,
+    //fixed: 'left',
   },
   {
     title: '叶绿素α(mg/L)',
     dataIndex: 'chlorophyll_alpha',
+    with: 150,
   },
   {
     title: '所在地市',
     dataIndex: 'city',
+    width: 150,
   },
   {
     title: '电导率(μS/cm)',
     dataIndex: 'conductivity',
+    width: 150,
   },
   {
     title: '溶解氧(mg/L)',
     dataIndex: 'dissolved_oxygen',
+    width: 150,
   },
   {
     title: 'pH(无量纲)',
     dataIndex: 'pH',
+    width: 150,
   },
   {
     title: '高锰酸盐指数(mg/L)',
     dataIndex: 'permanganate_index',
+    width: 150,
   },
   {
     title: '所属河流',
     dataIndex: 'river',
+    width: 150,
   },
   {
     title: '断面名称',
     dataIndex: 'section',
+    width: 150,
   },
   {
     title: '站点情况',
     dataIndex: 'station_status',
+    width: 150,
   },
   {
     title: '监测时间',
     dataIndex: 'time',
+    width: 150,
   },
   {
     title: '总氮(mg/L)',
     dataIndex: 'total_nitrogen',
+    width: 150,
   },
   {
-    title: '总磷(mg/L)',
+    title:'总磷(mg/L)',
     dataIndex: 'total_phosphorus',
+    width: 150,
   },
   {
     title: '浊度(NTU)',
     dataIndex: 'turbidity',
+    width: 150,
   },
   {
     title: '水质类别',
     dataIndex: 'water_quality',
+    width: 150,
   },
   {
     title: '水温(℃)',
     dataIndex: 'water_temperature',
+    width: 150,
   },
-]
+];
 
 function BriefIndex() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
 
-  function onChange(value) {
-    //console.log(Number(value[1]))
-    setLoading(true)
-    getWaterQualityData(Number(value[1])).then((res) => {
+function onChange(value) {
+  console.log(value)
+  if (!value) {
+    return
+  }
+  setLoading(true)
+  getWaterQualityData(Number(value[1]))
+    .then((res) => {
       setData(res.tbody)
       setLoading(false)
     })
-  }
+    .catch((error) => {
+      console.error(error)
+      setLoading(false)
+      setData([])
+      MessageTool('数据获取失败', 'error')
+    })
+}
 
-  function onSearch(val) {
-    setLoading(true)
-    getWaterQualityData(val).then((res) => {
+function onSearch(val) {
+  setLoading(true)
+  getWaterQualityData(val)
+    .then((res) => {
       setData(res.tbody)
       setLoading(false)
     })
-  }
+    .catch((error) => {
+      console.error(error)
+      setLoading(false)
+      setData([])
+      MessageTool('数据获取失败', 'error')
+    })
+}
 
   useEffect(() => {
     if (loading) {
@@ -187,9 +225,11 @@ function BriefIndex() {
           <Table
             columns={columns}
             dataSource={data}
+            loading={loading}
+            style={{width: '1000px'}}
             scroll={{
-              x: 900,
-              y: 600,
+              x: 400,
+              y: 400,
             }}
           />
         </div>
